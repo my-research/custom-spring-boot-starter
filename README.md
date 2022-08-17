@@ -1,5 +1,18 @@
 # Custom Spring Boot Starter
 
+Custom starter 를 만들고 사용합니다
+
+# infrastructure
+
+- modules
+  - `greeter`
+    - target library
+  - `greeter-spring-boot-autoconfigure`
+    - bean 등록해주는 autoconfigure 
+  - `greeter-spring-boot-starter`
+    - starter
+- private repository : nexus 
+
 ### 궁금한 것
 
 - gradle dependencies 에서 api 와 implementation 은 어떻게 다른가
