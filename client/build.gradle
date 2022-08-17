@@ -3,6 +3,7 @@ plugins {
     id "io.freefair.lombok" version "6.5.0.3"
     id 'org.springframework.boot' version '2.7.2'
     id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+    id 'maven-publish'
 }
 
 version '0.0.1'
@@ -21,4 +22,29 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.trvari.custom'
+            artifactId = 'custom-greeter'
+            from components.java
+
+            pom {
+                name = 'my-custom-greeter'
+                description = 'This is trevari value object that commonly usable'
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            credentials {
+                username = System.getenv("NEXUS_USERNAME")
+                password = System.getenv("NEXUS_PASSWORD")
+            }
+            url = System.getenv("NEXUS_URL")
+        }
+    }
 }

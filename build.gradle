@@ -1,24 +1,17 @@
-plugins {
-    id 'java'
-    id "io.freefair.lombok" version "6.5.0.3"
-    id 'org.springframework.boot' version '2.7.2'
-    id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+allprojects {
+    apply from: "$rootDir/base.gradle"
+
+
 }
 
-version '0.0.1'
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
 
-repositories {
-    mavenCentral()
-}
+    sourceCompatibility = '1.8'
+    version = '0.0.4'
 
-dependencies {
-    // implementation project(':greeter-spring-boot-autoconfigure')
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.7.2'
-
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-}
-
-test {
-    useJUnitPlatform()
+    test {
+        useJUnitPlatform()
+    }
 }

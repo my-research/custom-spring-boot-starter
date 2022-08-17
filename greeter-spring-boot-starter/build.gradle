@@ -3,8 +3,6 @@ plugins {
     id 'maven-publish'
 }
 
-version 'unspecified'
-
 repositories {
     mavenCentral()
 }
@@ -12,7 +10,6 @@ repositories {
 dependencies {
     api project(':greeter-spring-boot-autoconfigure')
     api project(':greeter')
-
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
@@ -27,7 +24,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'com.trvari.custom'
-            artifactId = 'custom-greeter'
+            artifactId = 'greeter-autoconfigure-spring-boot-starter'
             from components.java
 
             pom {

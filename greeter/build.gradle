@@ -2,9 +2,6 @@ plugins {
     id 'java'
 }
 
-group 'com.wonit'
-version '0.0.1-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
@@ -16,4 +13,28 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.trvari.custom'
+            artifactId = 'greeter'
+            from components.java
+
+            pom {
+                name = 'my-custom-greeter'
+                description = 'This is trevari value object that commonly usable'
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            credentials {
+                username = System.getenv("NEXUS_USERNAME")
+                password = System.getenv("NEXUS_PASSWORD")
+            }
+            url = System.getenv("NEXUS_URL")
+        }
+    }
 }

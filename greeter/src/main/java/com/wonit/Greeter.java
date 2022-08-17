@@ -4,12 +4,16 @@ import java.time.LocalDateTime;
 
 public class Greeter {
 
-    public void greet(LocalDateTime localDateTime) {
-        System.out.println("hello > " + localDateTime);
+    private final String name;
+    private final int age;
+
+    public Greeter(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
     public void greet() {
-        greet(LocalDateTime.now());
+        System.out.println(String.format("hello [%s], [%d]", name, age));
     }
 
 }
