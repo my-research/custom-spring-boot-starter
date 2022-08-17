@@ -1,0 +1,49 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api project(':greeter-spring-boot-autoconfigure')
+    api project(':greeter')
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.trvari.custom'
+            artifactId = 'custom-greeter'
+            from components.java
+
+            pom {
+                name = 'my-custom-greeter'
+                description = 'This is trevari value object that commonly usable'
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            credentials {
+                username = System.getenv("NEXUS_USERNAME")
+                password = System.getenv("NEXUS_PASSWORD")
+            }
+            url = System.getenv("NEXUS_URL")
+        }
+    }
+}
