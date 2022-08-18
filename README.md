@@ -23,5 +23,6 @@ Custom starter 를 만들고 사용합니다
 
 ### References
 
+- [https://tecoble.techcourse.co.kr/post/2021-10-14-springboot-autoconfiguration/](https://tecoble.techcourse.co.kr/post/2021-10-14-springboot-autoconfiguration/)
 - [https://www.baeldung.com/spring-boot-custom-starter](https://www.baeldung.com/spring-boot-custom-starter)
 - [https://github.com/Tetragramato/gradle-custom-spring-boot-starter](https://github.com/Tetragramato/gradle-custom-spring-boot-starter)

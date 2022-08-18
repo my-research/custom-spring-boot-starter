@@ -15,5 +15,4 @@ public class Greeter {
     public void greet() {
         System.out.println(String.format("hello [%s], [%d]", name, age));
     }
-
 }
