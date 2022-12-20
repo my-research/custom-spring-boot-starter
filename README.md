@@ -8,10 +8,10 @@ Custom starter 를 만들고 사용합니다
   - `greeter`
     - target library
   - `greeter-spring-boot-autoconfigure`
-    - bean 등록해주는 autoconfigure 
+    - bean 등록해주는 autoconfigure
   - `greeter-spring-boot-starter`
     - starter
-- private repository : nexus 
+- private repository : nexus
 
 ### 궁금한 것
 
